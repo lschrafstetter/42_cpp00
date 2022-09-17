@@ -6,7 +6,7 @@
 /*   By: lschrafs <lschrafs@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 13:00:36 by lschrafs          #+#    #+#             */
-/*   Updated: 2022/09/17 13:38:20 by lschrafs         ###   ########.fr       */
+/*   Updated: 2022/09/17 13:40:42 by lschrafs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,6 @@ int PhoneBook::search_contact() const {
   }
 
   // Get input to show a specific index of the phone book
-  std::cout << "Enter an index to show all info of a contact:" << std::endl;
   std::cout << "Enter an index to show all info of a contact:" << std::endl;
   while (1) {
     if (!getline(std::cin, input)) return EXIT_FAILURE;
