@@ -6,7 +6,7 @@
 /*   By: lschrafs <lschrafs@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 13:00:51 by lschrafs          #+#    #+#             */
-/*   Updated: 2022/09/17 11:45:35 by lschrafs         ###   ########.fr       */
+/*   Updated: 2022/09/17 13:44:59 by lschrafs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ class PhoneBook {
   ~PhoneBook();
   int add_contact();
   int search_contact() const;
-  Contact contacts_[8];
 
  private:
+  Contact contacts_[8];
   int current_index_;
 };
 
