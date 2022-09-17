@@ -6,7 +6,7 @@
 /*   By: lschrafs <lschrafs@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 12:09:25 by lschrafs          #+#    #+#             */
-/*   Updated: 2022/09/17 12:55:55 by lschrafs         ###   ########.fr       */
+/*   Updated: 2022/09/17 13:08:58 by lschrafs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ bool Account::makeWithdrawal(int withdrawal) {
   // Print log part 2
   std::cout << withdrawal << ";amount:" << this->_amount
             << ";nb_withdrawals:" << this->_nbWithdrawals << std::endl;
+	return true;
 }
 
 int Account::checkAmount(void) const { return this->_amount; }
