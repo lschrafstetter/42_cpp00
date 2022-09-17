@@ -6,7 +6,7 @@
 /*   By: lschrafs <lschrafs@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 13:00:36 by lschrafs          #+#    #+#             */
-/*   Updated: 2022/09/17 13:40:42 by lschrafs         ###   ########.fr       */
+/*   Updated: 2022/09/17 14:43:02 by lschrafs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ static void search_contact_print_line(Contact contact, int i) {
 
 int PhoneBook::search_contact() const {
   std::string input;
+	int index;
 
   // Check if phone book is empty
   if (this->contacts_[0].get_first_name().empty()) {
@@ -113,7 +114,7 @@ int PhoneBook::search_contact() const {
     if (input.empty())
       std::cout << "Not accepting empty input. Try again." << std::endl;
     else {
-      int index = input[0] - 48;
+      index = input[0] - 48;
       if (input[1] || index < 0 || index > 7 ||
           this->contacts_[index].get_first_name().empty())
         std::cout << "Invalid index. Try again." << std::endl;
@@ -124,19 +125,19 @@ int PhoneBook::search_contact() const {
 
   // Print contact info
   std::cout << std::endl << std::left << std::setw(20) << "FIRST NAME: "
-  					<< this->contacts_[std::stoi(input)].get_first_name()
+  					<< this->contacts_[index].get_first_name()
 						<< std::endl
   					<< std::setw(20) << "LAST NAME: "
-  					<< this->contacts_[std::stoi(input)].get_last_name()
+  					<< this->contacts_[index].get_last_name()
 						<< std::endl
   					<< std::setw(20) << "NICKNAME: "
-  					<< this->contacts_[std::stoi(input)].get_nickname()
+  					<< this->contacts_[index].get_nickname()
 						<< std::endl
   					<< std::setw(20) << "PHONE NUMBER: "
-  					<< this->contacts_[std::stoi(input)].get_phone_number()
+  					<< this->contacts_[index].get_phone_number()
             << std::endl
   					<< std::setw(20) << "DARKEST SECRET: "
-  					<< this->contacts_[std::stoi(input)].get_darkest_secret()
+  					<< this->contacts_[index].get_darkest_secret()
             << std::endl << std::endl;
   return EXIT_SUCCESS;
 }
