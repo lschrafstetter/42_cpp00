@@ -6,7 +6,7 @@
 /*   By: lschrafs <lschrafs@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 13:00:36 by lschrafs          #+#    #+#             */
-/*   Updated: 2022/09/17 11:55:52 by lschrafs         ###   ########.fr       */
+/*   Updated: 2022/09/17 13:38:20 by lschrafs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,17 +108,19 @@ int PhoneBook::search_contact() const {
 
   // Get input to show a specific index of the phone book
   std::cout << "Enter an index to show all info of a contact:" << std::endl;
+  std::cout << "Enter an index to show all info of a contact:" << std::endl;
   while (1) {
     if (!getline(std::cin, input)) return EXIT_FAILURE;
     if (input.empty())
       std::cout << "Not accepting empty input. Try again." << std::endl;
-    else if (is_number(input) == false)
-      std::cout << "Input is not a number. Try again!" << std::endl;
-    else if (std::stoi(input) > 7 ||
-             this->contacts_[std::stoi(input)].get_first_name().empty())
-      std::cout << "Index out of range. Try again!" << std::endl;
-    else
-      break;
+    else {
+      int index = input[0] - 48;
+      if (input[1] || index < 0 || index > 7 ||
+          this->contacts_[index].get_first_name().empty())
+        std::cout << "Invalid index. Try again." << std::endl;
+      else
+        break;
+    }
   }
 
   // Print contact info
